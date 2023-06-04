@@ -17,6 +17,10 @@ def town_to_county_mapper(town_name):
     town_name = town_name.strip().lower()
     return town_to_county.get(town_name, "Unknown")
 
+# Function to check if a string contains a number
+def has_number(input_string):
+    return any(char.isdigit() for char in input_string)
+
 # Read the input file
 with open('input.txt', 'r') as f:
     content = f.read()
@@ -35,18 +39,22 @@ for line in lines:
     county = town_to_county_mapper(items[3].strip())
     items[4] = county  # Replacing 'ME' with the county name
     
- # Checking if dealer's name ends with '.html'
-    dealer_name = items[7].split('<br>')[0]  # Extracting dealer's name
-    if dealer_name.endswith('.html'):
+    # Extracting dealer's name and address
+    raw_info = items[7].split('<br>')
+    dealer_name = raw_info[0]
+    address = ' '.join(raw_info[1:4])
+
+    # Check if dealer name contains a number, if so it might be an address
+    if has_number(dealer_name):
+        dealer_name, address = address, dealer_name  # swap them
+
+    if dealer_name.endswith('.html') or not dealer_name.split():
         dealer_name = 'Unknown'
 
-    # Checking if address starts with a number
-    address = ' '.join(items[7].split('<br>')[1:4])  # Extracting address
     if not address.split() or not address.split()[0].isdigit():
         address = 'Unknown'
 
     data_for_csv.append(items[:6] + [dealer_name, address])  # Adding dealer's name and address to the data
-
 
 # Convert data into a DataFrame
 df = pd.DataFrame(data_for_csv, columns=['Gun Shop Name', 'Unknown', 'Type', 'Town', 'County', 'Phone Number', 'Dealer Name', 'Address'])
