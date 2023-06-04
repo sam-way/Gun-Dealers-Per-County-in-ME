@@ -29,9 +29,5 @@ This script reads the input data, processes it, maps each dealer to a county, ge
 
 Note: Both scripts must be run in the mentioned order for the correct generation of the gun dealers list. Due to inconsistencies in the source data some of the names and address are missing or in the wrong place.
 
-Contributing
-
-Pull requests are welcome. For major changes, please open an issue first to discuss what you would like to change.
-License
-
-MIT
+Contributing: Pull requests are welcome. For major changes, please open an issue first to discuss what you would like to change.
+License: MIT
