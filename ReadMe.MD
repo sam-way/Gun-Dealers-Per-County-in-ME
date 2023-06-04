@@ -17,15 +17,17 @@ Usage
 Step 1: Get Town and County data from Wikipedia. Run the following script to scrape this data and save it as a CSV file.
 
 ```
-python -B src/wikiscrape.py
+python src/wikiscrape.py
 ```
 Step 2: Process raw data, map each dealer to a county, generate a bar graph of dealers per county, and save the processed data into a CSV file.
 
 ```
-python -B src/editAndCombine.py
+python src/editAndCombine.py
 ```
 
-![Bar Graph of Gun Dealers](Bar Graph of Gun Dealers.png)
+
+# Bar Graph of Gun Dealers 
+<img src="Bar Graph of Gun Dealers.png" width=500>
 
 Note: Run the scripts in the order mentioned above. Inconsistencies in source data may lead to some missing or misplaced names and addresses.
 Contributing
