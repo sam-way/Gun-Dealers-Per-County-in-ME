@@ -34,9 +34,19 @@ for line in lines:
         continue
     county = town_to_county_mapper(items[3].strip())
     items[4] = county  # Replacing 'ME' with the county name
+    
+ # Checking if dealer's name ends with '.html'
     dealer_name = items[7].split('<br>')[0]  # Extracting dealer's name
+    if dealer_name.endswith('.html'):
+        dealer_name = 'Unknown'
+
+    # Checking if address starts with a number
     address = ' '.join(items[7].split('<br>')[1:4])  # Extracting address
+    if not address.split() or not address.split()[0].isdigit():
+        address = 'Unknown'
+
     data_for_csv.append(items[:6] + [dealer_name, address])  # Adding dealer's name and address to the data
+
 
 # Convert data into a DataFrame
 df = pd.DataFrame(data_for_csv, columns=['Gun Shop Name', 'Unknown', 'Type', 'Town', 'County', 'Phone Number', 'Dealer Name', 'Address'])
@@ -61,4 +71,5 @@ plt.xticks(rotation=90)
 
 # Save the plot as a file
 plt.savefig('Bar Graph of Gun Dealers.png', bbox_inches='tight', dpi=300)
+
 
