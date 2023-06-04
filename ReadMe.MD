@@ -25,8 +25,6 @@ Step 2: Process raw data, map each dealer to a county, generate a bar graph of d
 python src/editAndCombine.py
 ```
 
-
-# Output Graph 
 <img src="Bar Graph of Gun Dealers.png" width=500>
 
 Note: Run the scripts in the order mentioned above. Inconsistencies in source data may lead to some missing or misplaced names and addresses.
