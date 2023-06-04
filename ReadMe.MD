@@ -28,9 +28,7 @@ python src/editAndCombine.py
 <img src="Bar Graph of Gun Dealers.png" width=500>
 
 Note: Run the scripts in the order mentioned above. Inconsistencies in source data may lead to some missing or misplaced names and addresses.
-Contributing
 
-Pull requests are welcome. For major changes, open an issue first to discuss proposed modifications.
-License
+Contributing: Pull requests are welcome. For major changes, open an issue first to discuss proposed modifications.
 
-This project is licensed under the terms of the MIT license.
+License: This project is licensed under the terms of the MIT license.
