@@ -1,9 +1,8 @@
 # 2023 List of Maine Gun Dealers
 
 This repository generates a county-wise list of gun dealers in Maine, by scraping and processing data from various sources. It also visualizes the data by creating a bar graph depicting the number of dealers per county.
-Source Data URL
 
-https://www.fflregistry.com/FFL-Dealers-Location/Maine-ME
+Source Data URL: https://www.fflregistry.com/FFL-Dealers-Location/Maine-ME
 
 Requirements
 
@@ -18,12 +17,12 @@ Usage
 Step 1: Get Town and County data from Wikipedia. Run the following script to scrape this data and save it as a CSV file.
 
 ```
-python -B src/q1.py
+python -B src/wikiscrape.py
 ```
 Step 2: Process raw data, map each dealer to a county, generate a bar graph of dealers per county, and save the processed data into a CSV file.
 
 ```
-python -B src/q2.py
+python -B src/editAndCombine.py
 ```
 
 ![Bar Graph of Gun Dealers](Bar Graph of Gun Dealers.png)
