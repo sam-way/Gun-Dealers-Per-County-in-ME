@@ -1,11 +1,9 @@
 # 2023 List of Maine Gun Dealers
 
-This is a project that generates a list of Maine gun dealers broken down by county. 
-It scrapes a list of towns and corresponding counties from Wikipedia.
-Process the raw data to map each gun dealer to a county and generate a bar graph of the number of dealers per county.
+This repository generates a county-wise list of gun dealers in Maine, by scraping and processing data from various sources. It also visualizes the data by creating a bar graph depicting the number of dealers per county.
+Source Data URL
 
-URL of the Source Data
-url =https://www.fflregistry.com/FFL-Dealers-Location/Maine-ME
+https://www.fflregistry.com/FFL-Dealers-Location/Maine-ME
 
 Requirements
 
@@ -13,22 +11,27 @@ Requirements
     Beautiful Soup
     Pandas
     Matplotlib
-    requests
+    Requests
 
 Usage
 
-Step 1: Scrape Town and County data from Wikipedia
+Step 1: Get Town and County data from Wikipedia. Run the following script to scrape this data and save it as a CSV file.
 
-Before generating the list of gun dealers, we need to get a list of towns and corresponding counties. The following Python script scrapes this data from Wikipedia and saves it as a CSV file.
+```
+python -B src/q1.py
+```
+Step 2: Process raw data, map each dealer to a county, generate a bar graph of dealers per county, and save the processed data into a CSV file.
 
-Step 2: Generate the List of Gun Dealers
+```
+python -B src/q2.py
+```
 
-This script reads the input data, processes it, maps each dealer to a county, generates a bar graph of the number of dealers per county, and finally saves the processed data into a CSV file.
+![Bar Graph of Gun Dealers](Bar Graph of Gun Dealers.png)
 
-<img src="Bar Graph of Gun Dealers.png" width=500>
+Note: Run the scripts in the order mentioned above. Inconsistencies in source data may lead to some missing or misplaced names and addresses.
+Contributing
 
-Note: Both scripts must be run in the mentioned order for the correct generation of the gun dealers list. Due to inconsistencies in the source data some of the names and address are missing or in the wrong place.
+Pull requests are welcome. For major changes, open an issue first to discuss proposed modifications.
+License
 
-Contributing: Pull requests are welcome. For major changes, please open an issue first to discuss what you would like to change.
-
-License: MIT
+This project is licensed under the terms of the MIT license.
